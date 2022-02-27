@@ -1,0 +1,24 @@
+# list tweets
+GET http://localhost:9090/tweets
+
+# get a tweet (return status code: 204 because there is no tweet)
+GET http://localhost:9090/tweets/abc
+
+# create a tweet
+POST http://localhost:9090/tweets
+content-type: application/json
+{
+    "message": "This is a tweet"
+}
+
+# delete a tweet (return status code: 204 in any case)
+DELETE http://localhost:9090/tweets/abc
+
+# list likes from a tweet
+GET http://localhost:9090/tweets/abc/likes
+
+# add one like to a tweet
+POST http://localhost:9090/tweets/abc/likes
+
+# remove one like to a tweet
+DELETE http://localhost:9090/tweets/abc/likes
